@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>浅出Vim（1）基本命令 | 发生了什么</title><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/5.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/grids-responsive-min.css"><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">浅出Vim（1）基本命令</h1><a id="logo" href="/.">发生了什么</a><p class="description">人生的路，走走停停是一种闲适，边走边看是一种优雅，边走边忘是一种豁达</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">浅出Vim（1）基本命令</h1><div class="post-meta">Feb 20, 2017<span> | </span><span class="category"><a href="/categories/Vim/">Vim</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><div class="post-content"><h1 id="Vim-简明手册"><a href="#Vim-简明手册" class="headerlink" title="Vim 简明手册"></a>Vim 简明手册</h1><p>当你刚打开VIM编辑器的时候，默认是处于<strong>命令模式</strong>。在该模式下，你可以通过VIM内建的命令操作文本。<br>在<strong>插入模式</strong>下，你可以像在Windows下的记事本已经编辑、输入文本。输入<em>i</em>就可以进入插入模式，按<em>ESC</em>键会退去<strong>插入模式</strong>，进入<strong>命令模式</strong>。当你不清楚当前VIM编辑器处于什么模式时，按<em>ESC</em>一定会回到<strong>命令模式</strong>。下面我们要说的命令都是在“命令模式”下执行的。按下<em>v</em>可以进入可视模式，这样你可以使用<code>h，j，k，l，w，b</code>来操作光标高亮选中文本,按<em>Enter</em>确认选中。</p>
+<h2 id="拷贝-amp-复制"><a href="#拷贝-amp-复制" class="headerlink" title="拷贝&amp;复制"></a>拷贝&amp;复制</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">yw</td>
+<td style="text-align:center">拷贝文字</td>
+</tr>
+<tr>
+<td style="text-align:center">yy</td>
+<td style="text-align:center">拷贝光标所在行</td>
+</tr>
+<tr>
+<td style="text-align:center">y$</td>
+<td style="text-align:center">拷贝光标所在位置直到行末</td>
+</tr>
+</tbody>
+</table>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">x</td>
+<td style="text-align:center">删除字符</td>
+</tr>
+<tr>
+<td style="text-align:center">dw</td>
+<td style="text-align:center">删除双字符</td>
+</tr>
+<tr>
+<td style="text-align:center">cw</td>
+<td style="text-align:center">删除双字符然后进入“插入模式”</td>
+</tr>
+<tr>
+<td style="text-align:center">dd</td>
+<td style="text-align:center">删除光标所在行</td>
+</tr>
+<tr>
+<td style="text-align:center">d￥</td>
+<td style="text-align:center">删除光标所在位置直到行末</td>
+</tr>
+</tbody>
+</table>
+<h2 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">k</td>
+<td style="text-align:center">向上移动光标</td>
+</tr>
+<tr>
+<td style="text-align:center">j</td>
+<td style="text-align:center">向下移动光标</td>
+</tr>
+<tr>
+<td style="text-align:center">h</td>
+<td style="text-align:center">向左移动光标</td>
+</tr>
+<tr>
+<td style="text-align:center">l</td>
+<td style="text-align:center">向右移动光标</td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">向右移动一个字</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:center">向左移动一个字</td>
+</tr>
+<tr>
+<td style="text-align:center">gg</td>
+<td style="text-align:center">移动光标到当前行首</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:center">移动光标到当前文件结尾</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">移动光标到当前行尾</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">移动光标到当前行第一个非空字符处</td>
+</tr>
+</tbody>
+</table>
+<h2 id="插入文字"><a href="#插入文字" class="headerlink" title="插入文字"></a>插入文字</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">i</td>
+<td style="text-align:center">在光标前</td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">在光标后</td>
+</tr>
+<tr>
+<td style="text-align:center">o</td>
+<td style="text-align:center">在当前行下新开一行插入</td>
+</tr>
+<tr>
+<td style="text-align:center">shift + o</td>
+<td style="text-align:center">在当前行上新开一行插入</td>
+</tr>
+</tbody>
+</table>
+<h2 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:q</td>
+<td style="text-align:center">没有修改文件时退出</td>
+</tr>
+<tr>
+<td style="text-align:center">:q!</td>
+<td style="text-align:center">强制退出</td>
+</tr>
+<tr>
+<td style="text-align:center">:x</td>
+<td style="text-align:center">保持文件后退出</td>
+</tr>
+<tr>
+<td style="text-align:center">:qw</td>
+<td style="text-align:center">保持文件后退出</td>
+</tr>
+<tr>
+<td style="text-align:center">:w</td>
+<td style="text-align:center">保持当前修改，进入”命令模式”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>在命令模式按<code>/+regx</code>,匹配到要查找的内容后，按<em>n</em>向后搜索，按<em>N</em>向前搜索。</p>
+<h2 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h2><p>输入<code>:sh</code>,可以从VIM暂时进入shell，按<em>exit</em>后返回VIM</p>
+<h2 id="撤回"><a href="#撤回" class="headerlink" title="撤回"></a>撤回</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">u</td>
+<td style="text-align:center">撤回上一次操作</td>
+</tr>
+<tr>
+<td style="text-align:center">ctrl + r</td>
+<td style="text-align:center">恢复上一步被撤销的操作</td>
+</tr>
+</tbody>
+</table>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://www.fslsm.com/2017/02/20/浅出Vim（1）基本命令/" data-id="cj0vu50ii0006g935j3mxymg8" class="article-share-link">分享到</a><div class="tags"><a href="/tags/Vim/">Vim</a></div><div class="post-nav"><a href="/2017/02/22/leetcode题解（24）Swap-Nodes-in-Pairs/" class="pre">leetcode题解（24）Swap Nodes in Pairs</a><a href="/2017/02/20/hello-world/" class="next">Hello World</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.baidu.com/baidu" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="search" name="word" maxlength="20" placeholder="Search"/><input type="hidden" name="si" value="http://www.fslsm.com"/><input name="tn" type="hidden" value="bds"/><input name="cl" type="hidden" value="3"/><input name="ct" type="hidden" value="2097152"/><input name="s" type="hidden" value="on"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法题解/">算法题解</a><span class="category-list-count">2</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/leetcode/" style="font-size: 15px;">leetcode</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/Vim/" style="font-size: 15px;">Vim</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/24/leetcode题解（201）Bitwise-And/">leetcode题解（201）Bitwise And</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/22/leetcode题解（24）Swap-Nodes-in-Pairs/">leetcode题解（24）Swap Nodes in Pairs</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/浅出Vim（1）基本命令/">浅出Vim（1）基本命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">发生了什么.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
